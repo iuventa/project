@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../static/style/style.css">
+    <title>MOFC {% block title %}Game{% endblock %}</title>
+    <link rel="icon" href="../static/img/1.jpg">
+</head>
+<body>
+    <header>
+        
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+                </button>
+                <h1><a href="/game">MOFC - Elementary Math For Children</a></h1>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                  {% if current_user.is_authenticated %}
+                  <li><a href="/game" id="home">Game</a></li>
+                  <li><a href="/history" id="history">My History</a></li>
+                  <li><a href="/logout" id="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                  {% else %}
+                  <li><a href="/signup" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                  <li><a href="/login" id="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </nav>
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {%  for category, message in messages %}
+              {% if category == 'error' %}
+              <div class="alert alert-danger alert-dismissable show" role="alert">
+                <p>{{ message }}</p>
+                <button type="button" class="close" data-dismiss='alert'>
+                  <span aria-hidden ="true" >&times;</span>
+                </button>
+              </div>
+              {% else %}
+              <div class="alert alert-success alert-dismissable show" role="alert">
+                <p>{{ message }}</p>
+                <button type="button" class="close" data-dismiss='alert'>
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+          {% endwith %}
+    </header>
+   <main>
+   
+      {% block content %}
+      {% endblock %}
+    
+   
+   </main>
+   <footer  class="flex">
+    <div class="projectinfo">
+        <p>Developer: <a href="https://www.linkedin.com/in/salome-gachechiladze/" target="_blank">Salome Gachechiladze</a></p>
+    </div>
+    <p>Date: <span>2023</span></p>
+    <p>
+        <a href="../static/pdf/gamerules.pdf">Rules of the game</a>
+    </p>
+</footer>
+    
+    
+</body>
+</html>

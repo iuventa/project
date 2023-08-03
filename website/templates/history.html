@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}My History{% endblock %}
+{% block content %}
+    <div class="container">
+
+        <h3 class="center">User's History</h3>
+        <ul class="list-group list-group-flush" id="notes">
+            {% for history in user.history %}
+            <li class="list-group-item">
+                <p>Game type: <span>{{ history.gametype }}</span></p>
+                <div class="flex">
+                    <p>End Time: <span>{{history.fullendtime}}</span> </p> 
+                    <p>Date: {{ history.datatime }}</p>   
+                </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

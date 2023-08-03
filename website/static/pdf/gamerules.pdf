@@ -1,0 +1,22 @@
+#### Description:
+
+# When you go to the site, you have to create an user or login (if you already have created one)
+# At the first page, there are 4 options to choose: division, multiply, addition, substraction
+# Depens on the choise, appers the page, where you shoud click start button (on the right side, next to the dice)
+# On the screen, there is shown some kind of appearances:
+#     1. The table with math tasks on it. Every drawer of the table is numbered from 0 to 44. 0 is Start and 44 is End. In every drawer you see the math task and from 0 # drawer to 44, is gets harder and harder.
+#     2. Dice and START button at the right side. Dice image changes every time on click the button ROLL THE DICE that appears when click START button.
+#     3. Answers sheet on the bottom at the dice and button.
+#     4. Counter at the botton of the answers sheet.
+# When START is clicked:
+#     1. the JS function starts working and counts the time from 00:00:00
+#     2. the STRAT button is changed to ROLL THE DICE button and on click the ROLL THE DICE BUTTON:
+#         2.1. The dice rolls and appears the random side of it
+#         2.2. If appears  for example 3, the box number 3 will change color and roll the dice button will not be active, untill user solves the task.
+#         2.3. User shoud see the math task that is writen at the number 3 box(drawerer) and must click the answer to the answer sheet
+#         2.4. If the answer is correct, the roll the dice button will be active. On click the button another side of the dice will be shown (maybe it should be the same one # too, because it is random function)
+#         3.5 Is the dice shows for example 5 (before it was 3, remeber?), the drawer number 8 will change color and the process is the same here too
+#         3.6 If the answer clicked to the answers sheet is incorrect, the box will change color and user should choose another answer untill it is correct.
+# The faster user solves the math tasks, the less time it takes, is better.
+#
+# At the end user sees what is the best result of time and what is his/her result. User can start again and improve the result of time.
